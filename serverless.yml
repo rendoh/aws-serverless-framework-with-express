@@ -23,7 +23,10 @@ provider:
 
 # you can overwrite defaults here
 #  stage: dev
- region: ap-northeast-1
+  region: ap-northeast-1
+
+plugins:
+  - serverless-offline
 
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
@@ -55,8 +58,13 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  myapp:
+    handler: app.handler
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
