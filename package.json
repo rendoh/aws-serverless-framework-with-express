@@ -1,0 +1,9 @@
+{
+  "name": "sls",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^1.32.0"
+  }
+}
